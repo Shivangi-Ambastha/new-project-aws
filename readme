@@ -1,0 +1,16 @@
+Provided zip file contains code for building Infrastructure on AWS
+
+1) There are three folders
+- network resources (builds network components)
+- fb-modules (contains terraform modules)
+- tfscripts (contains helper python scipts)
+2) There is a file
+- json file (contains variables for creating resources according to specified environment, e.g dev/qat/staging)
+
+go through the entire code and create workflos to run the code as CI/CD on Azure Devops (Azure Pipelines)
+
+Note: Azure Pipelines should follow best practises for deploying Infrastructure on AWS
+e.g
+1) should use terrascan for static analysis
+2) state files of terraform code
+3) Locking remote state

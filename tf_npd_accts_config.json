@@ -1,0 +1,179 @@
+{
+    "accounts": [
+        {
+            "workspace": "dev-account",
+            "tfstate": {
+                "notes": "manually create account account and dynamodb table",
+                "statefile_key": "terraform/states/terraform.tfstate",
+                "account": {
+                    "s3bucket": "fb-tfstate-npd-account-arunvel1988",
+                    "dynanodb_table": "fb-tfstate-lock-npd-account"
+                },
+                "network": {
+                    "s3bucket": "fb-tfstate-npd-networks-arunvel1988",
+                    "dynanodb_table": "fb-tfstate-lock-npd-networks"
+                },
+                "environment": {
+                    "s3bucket": "fb-tfstate-npd-envs",
+                    "dynanodb_table": "fb-tfstate-lock-npd-envs"
+                }
+            },
+            "tfstate_region": "us-east-2",
+            "primary_region": "us-east-2",
+            "dr_region": "us-west-1",
+            "secrets_region": "us-east-2",
+            "newrelic_config_secret_name": "nonprod/NewRelic",
+            "agents_config_s3bucket": "agents-config-mgmt-npd-arunvel1988",
+            "resources_full_access_roles": [
+                "HTS-Dev-AD-Admin",
+                "fb-hts-nonprod-automation",
+                "fb_jenkins_role"
+            ],
+            "vpcs": [
+                {
+                    "workspace": "dev-vpc",
+                    "notes": "regions primary, dr and secret can be overridden at VPC level",
+                    "environments": [
+                        {
+                            "workspace": "dev1",
+                            "notes": "no override allowed for account or vpc configs"
+                        },
+                        {
+                            "workspace": "dev2",
+                            "notes": "no override allowed for account or vpc configs"
+                        }
+                    ]
+                },
+                {
+                    "workspace": "qa-vpc",
+                    "notes": "regions primary, dr and secret can be overridden at VPC level",
+                    "environments": [
+                        {
+                            "workspace": "qa1",
+                            "notes": "no override allowed for account or vpc configs"
+                        }
+                    ]
+                }
+            ],
+            "intl_vpcs": [
+                {
+                    "workspace": "dev-intl-vpc",
+                    "notes": "regions primary, dr and secret can be overridden at VPC level",
+                    "primary_region": "us-east-2",
+                    "dr_region": "us-west-2",
+                    "secrets_region": "us-east-2",
+                    "environments": [
+                        {
+                            "workspace": "dev1-intl",
+                            "notes": "no override allowed for account or vpc configs"
+                        },
+                        {
+                            "workspace": "dev2-intl",
+                            "notes": "no override allowed for account or vpc configs"
+                        }
+                    ]
+                }
+            ],
+            "nfw_vpcs": [
+                {
+                    "workspace": "dev-nfw-vpc",
+                    "notes": "regions primary, dr and secret can be overridden at VPC level",
+                    "primary_region": "us-east-2",
+                    "dr_region": "us-west-2",
+                    "secrets_region": "us-east-2",
+                    "environments": [
+                        {
+                            "workspace": "dev1-nfw",
+                            "notes": "no override allowed for account or vpc configs"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+},
+
+
+{
+            "workspace": "qa-account",
+            "tfstate": {
+                "notes": "manually create account account and dynamodb table",
+                "statefile_key": "terraform/states/terraform.tfstate",
+                "account": {
+                    "s3bucket": "fb-tfstate-npd-account-arunvel1988",
+                    "dynanodb_table": "fb-tfstate-lock-npd-account"
+                },
+                "network": {
+                    "s3bucket": "fb-tfstate-npd-networks-arunvel1988",
+                    "dynanodb_table": "fb-tfstate-lock-npd-networks"
+                },
+                "environment": {
+                    "s3bucket": "fb-tfstate-npd-envs",
+                    "dynanodb_table": "fb-tfstate-lock-npd-envs"
+                }
+            },
+            "tfstate_region": "us-east-2",
+            "primary_region": "us-east-2",
+            "dr_region": "us-west-1",
+            "secrets_region": "us-east-2",
+            "newrelic_config_secret_name": "nonprod/NewRelic",
+            "agents_config_s3bucket": "agents-config-mgmt-npd-arunvel1988",
+            "resources_full_access_roles": [
+                "HTS-Dev-AD-Admin",
+                "fb-hts-nonprod-automation",
+                "fb_jenkins_role"
+            ],
+            "vpcs": [
+                {
+                    "workspace": "qa-vpc",
+                    "notes": "regions primary, dr and secret can be overridden at VPC level",
+                    "environments": [
+                        {
+                            "workspace": "qa1",
+                            "notes": "no override allowed for account or vpc configs"
+                        },
+                        {
+                            "workspace": "qa2",
+                            "notes": "no override allowed for account or vpc configs"
+                        }
+                    ]
+                },
+                       
+            "intl_vpcs": [
+                {
+                    "workspace": "dev-intl-vpc",
+                    "notes": "regions primary, dr and secret can be overridden at VPC level",
+                    "primary_region": "us-east-2",
+                    "dr_region": "us-west-2",
+                    "secrets_region": "us-east-2",
+                    "environments": [
+                        {
+                            "workspace": "dev1-intl",
+                            "notes": "no override allowed for account or vpc configs"
+                        },
+                        {
+                            "workspace": "dev2-intl",
+                            "notes": "no override allowed for account or vpc configs"
+                        }
+                    ]
+                }
+            ],
+            "nfw_vpcs": [
+                {
+                    "workspace": "dev-nfw-vpc",
+                    "notes": "regions primary, dr and secret can be overridden at VPC level",
+                    "primary_region": "us-east-2",
+                    "dr_region": "us-west-2",
+                    "secrets_region": "us-east-2",
+                    "environments": [
+                        {
+                            "workspace": "dev1-nfw",
+                            "notes": "no override allowed for account or vpc configs"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
