@@ -1,0 +1,4 @@
+pip>=20.3.3
+jsonpath-ng>=1.5.2
+boto3>=1.16.37
+jsonmerge>=1.7.0
