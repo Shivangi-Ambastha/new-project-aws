@@ -1,32 +1,49 @@
-
-variable "name" {
+# VPC Id
+variable "vpc_id" {
   type    = string
   default = ""
   validation {
-    condition     = length(var.name) > 0
-    error_message = "Role name can not be empty."
+    condition     = length(var.vpc_id) > 0
+    error_message = "VPC id can not be empty."
   }
 }
 
-variable "create_iam_instance_profile" {
-  type    = bool
-  default = false
-}
-
-variable "assume_role_policy" {
+#service name
+variable "service_name" {
   type    = string
   default = ""
-
   validation {
-    condition     = length(var.assume_role_policy) > 0
-    error_message = "Assume role policy can not be empty."
+    condition     = length(var.service_name) > 0
+    error_message = "Service name can not be empty."
   }
 }
 
-variable "policy_arns" {
+# Endpoint type can be Gateway or Interface
+variable "vpc_endpoint_type" {
+  type    = string
+  default = ""
+  validation {
+    condition     = length(var.vpc_endpoint_type) > 0
+    error_message = "Endpoint type can not be empty."
+  }
+}
+
+#route table ids
+variable "route_table_ids" {
   type    = list(string)
   default = []
 }
 
+#subnet IDs
+variable "subnet_ids" {
+  type    = list(string)
+  default = []
+}
+
+#security group IDs
+variable "security_group_ids" {
+  type    = list(string)
+  default = []
+}
 
 variable "tags" { type = map(string) }

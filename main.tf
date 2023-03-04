@@ -1,22 +1,12 @@
 
-#Opsworks ec2 role
-resource "aws_iam_role" "instance_role" {
-  name               = var.name
-  assume_role_policy = var.assume_role_policy
-  tags               = var.tags
-}
+resource "aws_vpc_endpoint" "vpc_endpoint" {
+  vpc_id            = var.vpc_id
+  service_name      = var.service_name
+  vpc_endpoint_type = var.vpc_endpoint_type
 
-resource "aws_iam_instance_profile" "instance_profile" {
-  count = var.create_iam_instance_profile ? 1 : 0
+  route_table_ids    = var.route_table_ids
+  subnet_ids         = var.subnet_ids
+  security_group_ids = var.security_group_ids
 
-  name = var.name
-  role = aws_iam_role.instance_role.name
-}
-
-
-resource "aws_iam_role_policy_attachment" "role_policy_attach" {
-  count = length(var.policy_arns)
-
-  role       = aws_iam_role.instance_role.name
-  policy_arn = var.policy_arns[count.index]
+  tags = var.tags
 }
